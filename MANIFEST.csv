@@ -1,0 +1,54 @@
+path,file_type,purpose,used_for,include_in,reason
+03_MATLAB/experiments/addPaper2Paths.m,matlab_function,Puts src/ and experiments/ on the MATLAB path,infrastructure,both,Called at the top of every experiment script
+03_MATLAB/experiments/plot_figs_v11b.m,matlab_script,Regenerates all six MATLAB figures from saved .mat files (v41 figure pass),Fig. 3 (exp02a_loss_vs_zeta); Fig. 4 (exp02a_prediction_error); Fig. 6 (exp04a_minrate); Fig. 7 (exp04a_outage); Fig. 8 (exp04b_sparsity); Fig. 9 (exp04c_rician),both,Figure script named in README_v41 as the generator of the submitted figures. NOTE: the GitHub copy carries a one-line path fix (hard-coded C:\Dev root); the Zenodo copy is byte-identical to the project file
+03_MATLAB/experiments/functionIEEEPalette.m,matlab_function,IEEE figure palette and sizes,All figures,both,Called by plot_figs_v11b.m
+03_MATLAB/experiments/functionIEEEFinish.m,matlab_function,Exports figure as vector PDF at IEEE column width,All figures,both,Called by plot_figs_v11b.m
+03_MATLAB/experiments/exp02a_focusing_loss_validation.m,matlab_script,Monte Carlo validation of Theorem 1 / Corollaries (focusing loss vs zeta),Fig. 3 (exp02a_loss_vs_zeta); Fig. 4 (exp02a_prediction_error),both,Entry point; produces exp02a_focusing_loss_validation.mat loaded by plot_figs_v11b.m
+03_MATLAB/experiments/exp04a_rate_outage.m,matlab_script,Original rate/outage sweep (lineage of exp12a),Fig. 6 (exp04a_minrate); Fig. 7 (exp04a_outage) (lineage),both,Produces exp04a_rate_outage.mat loaded by exp12a_rate_outage_safe.m
+03_MATLAB/experiments/exp12a_rate_outage_safe.m,matlab_script,Restart-safe rate/outage run; produces scale factors,Fig. 6 (exp04a_minrate); Fig. 7 (exp04a_outage) (lineage),both,Produces exp12a_safe.mat loaded by exp14a_rate_outage_bestiter.m
+03_MATLAB/experiments/exp14a_rate_outage_bestiter.m,matlab_script,"Final rate/outage sweep (nominal, uncertainty-aware, worst-case; best-probe rule)",Fig. 6 (exp04a_minrate); Fig. 7 (exp04a_outage); Table tab:worstcase,both,Produces exp14a_bestiter.mat loaded by plot_figs_v11b.m; worst-case table values match this run
+03_MATLAB/experiments/exp04b_feedback_sparsity.m,matlab_script,Original feedback-sparsity sweep (lineage of exp12b),Fig. 8 (exp04b_sparsity) (lineage),both,Produces exp04b_feedback_sparsity.mat loaded by exp12b_sparsity_safe.m
+03_MATLAB/experiments/exp12b_sparsity_safe.m,matlab_script,Restart-safe sparsity run,Fig. 8 (exp04b_sparsity) (lineage),both,Produces exp12b_safe.mat
+03_MATLAB/experiments/exp12c_finish.m,matlab_script,Completes/merges the exp12b sparsity run,Fig. 8 (exp04b_sparsity) (lineage),both,Produces final exp12b_safe.mat loaded by exp14b_sparsity_bestiter.m
+03_MATLAB/experiments/exp14b_sparsity_bestiter.m,matlab_script,Final feedback-sparsity sweep (best-probe rule),Fig. 8 (exp04b_sparsity),both,Produces exp14b_bestiter.mat loaded by plot_figs_v11b.m
+03_MATLAB/experiments/exp14e_v5g48.m,matlab_script,"Cascaded Rician check, 48 restarts",Fig. 9 (exp04c_rician),both,Produces exp14e_v5g48.mat loaded by plot_figs_v11b.m
+03_MATLAB/experiments/exp05b_tableIV_consistent.m,matlab_script,"Interleaved timing round: t_it, t_fix, M(Ts)",Table tab:budget,both,Entry point; its printed values match Table tab:budget digit for digit
+03_MATLAB/experiments/exp03g_loss_by_direction.m,matlab_script,Focusing loss by motion direction and Ts,Table tab:loss,both,Entry point; saved values match Table tab:loss
+03_MATLAB/experiments/exp06_mcpsi_baseline.m,matlab_script,Closed-form vs Monte Carlo moment comparison,Table tab:mcpsi,both,Entry point for Table tab:mcpsi (values match approximately; see decisions.md open item)
+03_MATLAB/src/channel/functionArrayResponse.m,matlab_function,Near-field array response,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionBCDMM.m,matlab_function,"BCD-MM beamforming solver (nominal, Paper 1)","Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionBuildCodebook.m,matlab_function,Focal-point codebook,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionRISPositions.m,matlab_function,RIS element geometry,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionSimParams.m,matlab_function,Simulation parameter set,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionSteeringMatrix.m,matlab_function,Near-field steering matrix,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionUserChannel.m,matlab_function,User channel generation,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionApertureSpread.m,matlab_function,Aperture spread matrix,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionRobustEqualGainMM.m,matlab_function,Robust equal-gain MM solver,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionRobustMaxMinMM.m,matlab_function,Robust max-min MM solver (Algorithm 1),"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionRobustMoment.m,matlab_function,Closed-form response moment,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionRobustMomentFactor.m,matlab_function,Low-rank moment factor,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/channel/functionSweptMoment.m,matlab_function,Swept-displacement moment,"Figures 3-9; Tables budget, loss, mcpsi",both,Transitively called by the entry scripts (the byte-identical copy in matlab_sims/ was not used)
+03_MATLAB/src/metrics/functionFocusingGain.m,matlab_function,Exact focusing gain,Fig. 3; Fig. 4,both,Called by exp02a_focusing_loss_validation.m
+03_MATLAB/experiments/exp02a_focusing_loss_validation.mat,data_mat,Saved exp02a results,Fig. 3 (exp02a_loss_vs_zeta); Fig. 4 (exp02a_prediction_error),both,Loaded by plot_figs_v11b.m
+03_MATLAB/experiments/exp04a_rate_outage.mat,data_mat,Saved original rate/outage run,lineage,both,Loaded by exp12a_rate_outage_safe.m
+03_MATLAB/experiments/exp04b_feedback_sparsity.mat,data_mat,Saved original sparsity run,lineage,both,Loaded by exp12b_sparsity_safe.m
+03_MATLAB/experiments/exp04b_feedback_sparsity_PUBLISHED_backup.mat,data_mat,"Earlier published-state sparsity run, used as reference",lineage,both,Loaded by exp12c_finish.m
+03_MATLAB/experiments/exp12a_safe.mat,data_mat,Saved restart-safe rate/outage run (scale factors),lineage; Fig. 6 (exp04a_minrate),both,Loaded by exp14a_rate_outage_bestiter.m
+03_MATLAB/experiments/exp12b_safe.mat,data_mat,Saved restart-safe sparsity run (scale factors),lineage; Fig. 8 (exp04b_sparsity),both,Loaded by exp14b_sparsity_bestiter.m
+03_MATLAB/experiments/exp14a_bestiter.mat,data_mat,Final rate/outage/worst-case data,Fig. 6 (exp04a_minrate); Fig. 7 (exp04a_outage); Table tab:worstcase,both,Loaded by plot_figs_v11b.m; frozen data behind the figures
+03_MATLAB/experiments/exp14b_bestiter.mat,data_mat,Final sparsity data,Fig. 8 (exp04b_sparsity),both,Loaded by plot_figs_v11b.m
+03_MATLAB/experiments/exp14e_v5g48.mat,data_mat,Final Rician-check data,Fig. 9 (exp04c_rician),both,Loaded by plot_figs_v11b.m
+03_MATLAB/experiments/exp05b_tableIV.mat,data_mat,Saved timing round,Table tab:budget,zenodo,Frozen result data behind Table tab:budget; regenerated by exp05b_tableIV_consistent.m
+03_MATLAB/experiments/exp03g_loss.mat,data_mat,Saved loss-by-direction data,Table tab:loss,zenodo,Frozen result data behind Table tab:loss
+03_MATLAB/experiments/exp06_mcpsi.mat,data_mat,Saved closed-form vs MC data,Table tab:mcpsi,zenodo,Frozen result data behind Table tab:mcpsi
+03_MATLAB/experiments/exp06_mcpsi_RESULTS.mat,data_mat,Consolidated exp06 results (producer script not identified),Table tab:mcpsi,zenodo,Likely source of the gain/optimism columns; provenance to be confirmed by author
+07_Manuscript/figures/exp02a_loss_vs_zeta.pdf,figure_pdf,Reference copy of the figure as used in manuscript v41 (for comparison with regenerated output),Fig. 3 (exp02a_loss_vs_zeta),both,Expected output of plot_figs_v11b.m
+07_Manuscript/figures/exp02a_prediction_error.pdf,figure_pdf,Reference copy of the figure as used in manuscript v41 (for comparison with regenerated output),Fig. 4 (exp02a_prediction_error),both,Expected output of plot_figs_v11b.m
+07_Manuscript/figures/exp04a_minrate.pdf,figure_pdf,Reference copy of the figure as used in manuscript v41 (for comparison with regenerated output),Fig. 6 (exp04a_minrate),both,Expected output of plot_figs_v11b.m
+07_Manuscript/figures/exp04a_outage.pdf,figure_pdf,Reference copy of the figure as used in manuscript v41 (for comparison with regenerated output),Fig. 7 (exp04a_outage),both,Expected output of plot_figs_v11b.m
+07_Manuscript/figures/exp04b_sparsity.pdf,figure_pdf,Reference copy of the figure as used in manuscript v41 (for comparison with regenerated output),Fig. 8 (exp04b_sparsity),both,Expected output of plot_figs_v11b.m
+07_Manuscript/figures/exp04c_rician.pdf,figure_pdf,Reference copy of the figure as used in manuscript v41 (for comparison with regenerated output),Fig. 9 (exp04c_rician),both,Expected output of plot_figs_v11b.m
+CITATION.cff,docs,release documentation,infrastructure,both,README/license/version/citation material required for a self-contained release
+LICENSE,docs,release documentation,infrastructure,both,README/license/version/citation material required for a self-contained release
+README.md,docs,release documentation,infrastructure,both,README/license/version/citation material required for a self-contained release
+VERSIONS.md,docs,release documentation,infrastructure,both,README/license/version/citation material required for a self-contained release
